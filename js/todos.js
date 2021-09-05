@@ -1,6 +1,19 @@
 const todosForm=document.querySelector(".todos-form");
 const todosInput=document.querySelector(".todos-input");
-const todoList=document.querySelector(".todos-list")
+const todoList=document.querySelector(".todos-list");
+const handleButton=document.querySelector(".handle-button");
+
+handleButton.addEventListener("click",()=>{
+    todoList.classList.toggle("hidden");
+    todosForm.classList.toggle("hidden");
+    const openClose=handleButton.innerText
+    if(openClose==="Open"){
+        handleButton.innerText="Close";
+    } else {
+        handleButton.innerText="Open"
+    }
+})
+
 const TODOS_KEY="key"
 let todos=[];
 let savedTodos=JSON.parse(localStorage.getItem("TODOS_KEY"));
